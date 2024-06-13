@@ -3,7 +3,7 @@
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.7-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> ### Starter application/template with UI Enablement libraries and tooling
+> ### Starter application/template with Core Vite App
 
 This repository serves as a template for `ui application`. Please see [create-cmf-app](https://github.com/edgar0011/create-cmf-app) how to initialize.
 
