@@ -1,0 +1,87 @@
+@import 'src/styles/common.scss';
+
+.{{camelCase name}} {
+  > span {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  overflow: hidden;
+  &.info {
+    border: 1px solid $info;
+  }
+
+  &.success {
+    border: 1px solid $success;
+  }
+
+  &.error {
+    border: 1px solid $error;
+  }
+
+  &.warning {
+    border: 1px solid $warning;
+  }
+
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 1.8rem;
+  min-width: 'auto';
+  width: 'auto';
+  padding: 0.5rem;
+  font-size: 1rem;
+
+  &.tiny {
+    height: 1.4rem;
+    min-width: 1.5rem;
+    width: 1.5rem;
+    padding: 0.2rem;
+    font-size: 0.8rem;
+  }
+
+  &.fluid {
+    width: 100%;
+  }
+
+  &.truncate {
+    > span {
+      @include text-truncate;
+    }
+  }
+
+  &.animated {
+    transition: transform 250ms ease-out;
+  }
+  box-shadow: $container-shadow;
+
+  &:hover {
+    &.animated {
+      transform: scale(1.2);
+    }
+  }
+}
+
+:global {
+  // Apply dark theme
+  .cui-theme-dark {
+    :local {
+      .{{camelCase name}} {
+        color: $white;
+        background: $gray;
+      }
+    }
+  }
+
+  // Apply light theme
+  .cui-theme-light {
+    :local {
+      .{{camelCase name}} {
+        color: $gray;
+        background: $white;
+      }
+    }
+  }
+}

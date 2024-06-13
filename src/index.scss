@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@100;200;300;400;500;600;700&display=swap');
+
+$font-base-family: 'Roboto, Oswald, sans-serif';
+
+@import '@e1011/es-kit/dist/ui/index.css';
+
+@import '@e1011/es-kit/dist/ui/styles/generic.anims.css';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, Oswald, sans-serif;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  min-height: 100vh;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+// utility classes
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+.text-ellipsis {
+  text-overflow: ellipsis !important;
+}
+
+.text-truncate {
+  @extend .overflow-hidden;
+  @extend .text-nowrap;
+  @extend .text-ellipsis;
+}
+
+@mixin text-truncate() {
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+}

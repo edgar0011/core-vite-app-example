@@ -1,0 +1,105 @@
+@import 'src/styles/common.scss';
+
+.button {
+  border: none;
+  color: $black;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  // display: inline-block;
+  font-size: 1rem;
+
+  > span {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+  }
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 'auto';
+  width: 'auto';
+
+  &.info {
+    background-color: $info;
+  }
+
+  &.success {
+    background-color: $success;
+  }
+
+  &.error {
+    background-color: $error;
+  }
+
+  &.warning {
+    background-color: $warning;
+  }
+
+  &.tiny {
+    height: 1.4rem;
+    min-width: 1.5rem;
+    width: 1.5rem;
+    padding: 0.2rem;
+    font-size: 0.8rem;
+  }
+
+  &.fluid {
+    width: 100%;
+  }
+
+  &.truncate {
+    > span {
+      @include text-truncate;
+    }
+  }
+
+  &.animated {
+    transition: transform 250ms ease-out;
+  }
+
+  box-shadow: $cui-card-shadow;
+
+  &:hover {
+    &.animated {
+      transform: scale(1.2);
+    }
+    background-color: #c5c5c5 !important;
+  }
+
+  user-select: all;
+  pointer-events: auto;
+  cursor: pointer;
+
+  &.disabled {
+    user-select: none;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+}
+
+:global {
+  // Apply dark theme
+  .cui-theme-dark {
+    :local {
+      .button {
+        color: $white;
+        // background-color: $gray;
+      }
+    }
+  }
+
+  // Apply light theme
+  .cui-theme-light {
+    :local {
+      .button {
+        color: $black;
+        // background-color: $white;
+      }
+    }
+  }
+}

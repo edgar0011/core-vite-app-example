@@ -1,0 +1,21 @@
+import { StoryFn as Story, Meta } from '@storybook/react'
+import { LayoutBox } from '@e1011/es-kit'
+
+import { {{pascalCase name}} } from 'components/{{module}}/{{pascalCase name}}'
+import type { {{pascalCase name}}Props } from 'components/{{module}}/{{camelCase name}}.types'
+
+
+export default {
+  title: 'e1011/{{module}}/{{pascalCase name}}',
+  component: {{pascalCase name}},
+} as Meta
+
+
+const {{pascalCase name}}Template: Story<{{pascalCase name}}Props> = (args) => (
+  <LayoutBox width='100%' height='100%' justify='center' align='center'>
+    <{{pascalCase name}} {...args}>or with some content...</{{pascalCase name}}>
+  </LayoutBox>
+)
+
+export const {{pascalCase name}}Base = {{pascalCase name}}Template.bind({})
+{{pascalCase name}}Base.args = {}

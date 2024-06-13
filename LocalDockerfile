@@ -1,0 +1,22 @@
+FROM node:18
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
+COPY package-lock.json ./
+
+RUN npm i -f
+# If you are building your code for production
+# RUN npm ci -f --only=production
+
+# Bundle app source
+COPY . .
+
+RUN export NODE_OPTIONS="--max-old-space-size=20000" && npm run build
+
+EXPOSE 8080
+CMD [ "npm", "run", "start2" ]

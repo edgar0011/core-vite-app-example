@@ -1,0 +1,43 @@
+import { StoryFn as Story, Meta } from '@storybook/react'
+import { LayoutBox } from '@e1011/es-kit'
+
+import { {{pascalCase name}} } from 'components/{{module}}/{{pascalCase name}}'
+import type { {{pascalCase name}}Props } from 'components/{{module}}/{{camelCase name}}.types'
+import { Alerts } from 'utils/ui/variants'
+import { Link } from 'components/atoms/text/Link'
+
+
+export default {
+  title: 'e1011/{{module}}/{{pascalCase name}}',
+  component: {{pascalCase name}},
+} as Meta
+
+
+const {{pascalCase name}}Template: Story<{{pascalCase name}}Props> = (args) => (
+  <LayoutBox width='100%' column align='center' gap='1rem'>
+    <LayoutBox width='100%' height='100%' justify='center' align='center' gap='1rem'>
+      <{{pascalCase name}} {...args}>01</{{pascalCase name}}>
+      <{{pascalCase name}} {...args}>Some Text <Link href='https://www.google.com' target='sdsdsd'>Link to google.com</Link></{{pascalCase name}}>
+      {/* Tiny is suitable only for numbers */}
+      <{{pascalCase name}} tiny {...args}>4</{{pascalCase name}}>
+      <{{pascalCase name}} variant={Alerts.info} {...args}>11</{{pascalCase name}}>
+      <{{pascalCase name}} variant={Alerts.warning} {...args}>86</{{pascalCase name}}>
+      <{{pascalCase name}} variant={Alerts.success} {...args}>999</{{pascalCase name}}>
+      <{{pascalCase name}} variant={Alerts.error} {...args}>0909</{{pascalCase name}}>
+      <{{pascalCase name}} variant={Alerts.error} {...args}>Can it handle long text?</{{pascalCase name}}>
+
+      <LayoutBox width='100px'>
+        <{{pascalCase name}} variant={Alerts.error} truncate fluid {...args}>
+          Can it handle long text and be truncated?
+        </{{pascalCase name}}>
+      </LayoutBox>
+    </LayoutBox>
+    <LayoutBox width='280px' height='100%' justify='center' align='center' gap='1rem'>
+      <{{pascalCase name}} variant={Alerts.error} truncate fluid {...args}>Can it handle long text?</{{pascalCase name}}>
+      <{{pascalCase name}} variant={Alerts.error} fluid {...args}>Can it handle long text?</{{pascalCase name}}>
+    </LayoutBox>
+  </LayoutBox>
+)
+
+export const {{pascalCase name}}Base = {{pascalCase name}}Template.bind({})
+{{pascalCase name}}Base.args = {}

@@ -1,0 +1,34 @@
+{
+   "simple":{
+      "replace":[
+         {
+            "src/app/App.tsx": "src/app/App.simple.tsx"
+         },
+         {
+             "src/docs-index.ts": "src/docs-index.simple.ts"
+         },
+         {
+            ".gitlab-ci.yml": ".gitlab-ci.cmf.yml"
+         }
+      ],
+      "remove":[
+         "src/components/*",
+         "src/app/app.navigation.tsx",
+         "src/app/app.router.tsx",
+         "cypress/e2e/router.cy.js",
+         "cypress/e2e/navigation.cy.js",
+         ".gitlab-ci.yml"
+      ]
+   },
+   "medium":{
+      "replace": [
+         {
+            ".gitlab-ci.yml": ".gitlab-ci.cmf.yml"
+         }
+      ],
+     "remove":[
+        "src/app/App.simple.tsx",
+        "src/docs-index.simple.ts"
+     ]
+  }
+ }

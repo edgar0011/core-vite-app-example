@@ -1,0 +1,42 @@
+import { memo, FC } from 'react'
+import { LayoutBox } from '@e1011/es-kit'
+
+
+import { HeadlineTertiary, Paragraph } from 'components/atoms/text'
+import classes from 'components/{{module}}/{{camelCase name}}.module.scss'
+import type { {{pascalCase name}}Props } from './{{camelCase name}}.types'
+import { Button } from 'components/atoms/button/Button'
+
+/**
+ * {{pascalCase name}} component.
+ * Generated component from Template
+ *
+ * @type {React.FC<{{pascalCase name}}Props>}
+ * @returns {React.ReactElement} The {{pascalCase name}}.
+ */
+export const {{pascalCase name}}: FC<{{pascalCase name}}Props> = memo<{{pascalCase name}}Props>(({
+  title = '{{pascalCase name}} - generated',
+  text = 'One time, there will be a component',
+  buttonLabel = '{{pascalCase name}} Click',
+  className = '',
+  buttonAction = () => alert('{{pascalCase name}} - generated, button clicked'),
+  children,
+  ...props
+}: {{pascalCase name}}Props) => (
+  <LayoutBox
+    direction='column'
+    width='100%'
+    gap='1rem'
+    padding='1rem'
+    // eslint-disable-next-line dot-notation
+    className={`${classes['{{camelCase name}}']} ${className}`}
+    {...props}
+  >
+    {title && <HeadlineTertiary>{title}</HeadlineTertiary>}
+    {text && <Paragraph>{text}</Paragraph>}
+    {buttonLabel && <Button onClick={buttonAction}>{buttonLabel}</Button>}
+    {children && children}
+  </LayoutBox>
+))
+
+{{pascalCase name}}.displayName = '{{pascalCase name}}'

@@ -1,0 +1,54 @@
+import { memo, FC } from 'react'
+import { LayoutBox, classNames } from '@e1011/es-kit'
+
+import type { {{pascalCase name}}Props } from 'components/{{module}}/{{camelCase name}}.types'
+import classes from 'components/{{module}}/{{camelCase name}}.module.scss'
+import { HeadlineTertiary, Paragraph } from 'components/atoms/text'
+import { Button } from 'components/atoms/button/Button'
+
+
+/**
+ * {{pascalCase name}} component.
+ * @component
+ *
+ * Generated component from Template
+ * @param {object} props - The component props.
+ * @param {string} [props.title] - The title for the component.
+ * @param {string} [props.text] - The text content for the component.
+ * @param {string} [props.buttonLabel] - The label for the button in the component.
+ * @param {string} [props.className] - Additional CSS class name(s) for styling the component.
+ * @param {() => void} [props.buttonAction] - The action to be performed when the button is clicked.
+ * @param {React.ReactNode} [props.children] - The children components or elements.
+ *
+ * @type {React.FC<{{pascalCase name}}Props>}
+ * @returns {React.ReactElement} The {{pascalCase name}}.
+ */
+export const {{pascalCase name}}: FC<{{pascalCase name}}Props> = memo<{{pascalCase name}}Props>(({
+  title = '{{pascalCase name}} - generated',
+  text = 'One time, there will be a component',
+  buttonLabel = '{{pascalCase name}} Click',
+  className = '',
+  buttonAction = () => alert('{{pascalCase name}} - generated, button clicked'),
+  children,
+  ...props
+}: {{pascalCase name}}Props) => (
+  <LayoutBox
+    direction='column'
+    width='100%'
+    gap='1rem'
+    padding='1rem'
+    // eslint-disable-next-line dot-notation
+    className={classNames(classes['{{camelCase name}}'], className)}
+    {...props}
+  >
+    {title && <HeadlineTertiary>{title}</HeadlineTertiary>}
+    {text && <Paragraph>{text}</Paragraph>}
+    {buttonLabel && <Button onClick={buttonAction}>{buttonLabel}</Button>}
+    {children && children}
+  </LayoutBox>
+))
+
+export type {{pascalCase name}}Type = typeof {{pascalCase name}}
+
+// Set display name for the component.
+{{pascalCase name}}.displayName = '{{pascalCase name}}'

@@ -1,0 +1,32 @@
+@import 'src/styles/common.scss';
+
+.{{camelCase name}} {
+  padding: 2rem;
+  border: 1px solid $blue-light;
+  background-color: $gray-light;
+  overflow: auto;
+}
+
+:global {
+  // Apply dark theme
+  .cui-theme-dark {
+    :local {
+      .{{camelCase name}} {
+        border: 1px solid $blue-light;
+        background-color: $gray-light;
+        color: $white;
+      }
+    }
+  }
+
+  // Apply light theme
+  .cui-theme-light {
+    :local {
+      .{{camelCase name}} {
+        border: 1px solid $blue-light;
+        background-color: $gray-light;
+        color: $black;
+      }
+    }
+  }
+}

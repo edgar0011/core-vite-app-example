@@ -1,0 +1,23 @@
+{
+  "routes": {
+    "basePath": "/app",
+    "auth": {
+      "CMF_APP_PATH": {
+        "name": "CMF_APP",
+        "icon": "applicationsIcon",
+        "tooltipText": "CMF_APP",
+        "apps": [
+          {
+            "cssFiles": "[\"http://localhost:2001/bundle.css\"]",
+            "jsFiles": "[\"http://localhost:2001/bundle.js\",\"http://localhost:2001/bundle.umd.js\"]",
+            "mountId": "ui-CMF_APP_PATH",
+            "config": "{\"basePath\":\"/app/CMF_APP_PATH\"}",
+            "loader": true,
+            "data-sample-attribute": "some serialized data for CMF_APP"
+          }
+        ]
+      }
+    },
+    "unauth": {}
+  }
+}

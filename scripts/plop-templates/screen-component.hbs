@@ -1,0 +1,28 @@
+import { memo, PropsWithChildren } from 'react'
+import { LayoutBox } from '@e1011/es-kit'
+
+import classes from 'screens/{{module}}/{{camelCase name}}.module.scss'
+
+
+type {{pascalCase name}}Props = PropsWithChildren & {
+  title?: string
+  className?: string
+}
+
+export const {{pascalCase name}}Screen
+= memo<{{pascalCase name}}Props>(({ children, title, className }: {{pascalCase name}}Props) => (
+  <LayoutBox
+    width='100%'
+    height='100%'
+    justify='center'
+    className={`${classes['{{camelCase name}}']} ${className}`}
+  >
+    {title && <h1>{title}</h1>}
+    {children && children}
+  </LayoutBox>
+))
+
+{{pascalCase name}}Screen.displayName = '{{pascalCase name}}Screen'
+
+
+export default {{pascalCase name}}Screen

@@ -1,0 +1,22 @@
+/**
+ * @jest-environment jsdom
+ */
+
+import { {{pascalCase name}} } from 'components/{{module}}/{{pascalCase name}}'
+import classes from 'components/{{module}}/{{camelCase name}}.module.scss'
+import { render } from 'utils/test/test-utils'
+
+describe('components/{{module}}/{{pascalCase name}}', () => {
+  it('renders {{pascalCase name}} with classes', async () => {
+    const rendered = render(<{{pascalCase name}} className='anotherClass' />)
+
+    const elements = rendered?.container.querySelectorAll('.anotherClass')
+
+    const element = elements[0] as HTMLElement
+
+    expect(rendered?.container).toBeDefined()
+    expect(elements?.length).toEqual(1)
+    expect(element?.getAttribute('class')?.includes('anotherClass')).toEqual(true)
+    expect(element?.getAttribute('class')?.includes(classes.{{camelCase name}})).toEqual(true)
+  })
+})

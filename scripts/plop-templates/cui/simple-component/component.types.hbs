@@ -1,0 +1,17 @@
+import { PropsWithChildren } from 'react'
+import { CommonProps } from '@e1011/es-kit'
+
+import { Alerts } from 'utils/ui/variants'
+
+
+export type {{pascalCase name}}Props = PropsWithChildren & {
+  id?: string
+  className?: string
+  tiny?: boolean
+  variant?: Alerts
+  value?: string | number
+  truncate?: boolean
+  fluid?: boolean
+  animated?: boolean
+
+} & CommonProps

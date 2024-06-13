@@ -1,0 +1,57 @@
+import { memo } from 'react'
+import { classNames, composeId } from '@e1011/es-kit'
+
+import type { {{pascalCase name}}Props } from 'components/{{module}}/{{camelCase name}}.types'
+import classes from 'components/{{module}}/{{camelCase name}}.module.scss'
+
+
+/**
+ * {{pascalCase name}} component for displaying {{camelCase name}}s with optional features.
+ * @component
+ *
+ * Generated component from Template
+ * @param {object} props - The component props.
+ * @param {string} props.value - The value to be displayed in the {{camelCase name}}.
+ * @param {ReactNode} [props.children] - Additional content to be displayed inside the {{camelCase name}}.
+ * @param {string} [props.variant] - The variant of the {{camelCase name}} (e.g., 'primary', 'secondary').
+ * @param {boolean} [props.tiny] - Whether the {{camelCase name}} should be tiny.
+ * @param {boolean} [props.truncate] - Whether the content inside the {{camelCase name}} should be truncated.
+ * @param {boolean} [props.fluid] - Whether the {{camelCase name}} should have a fluid width.
+ * @param {boolean} [props.animated=true] - Whether the {{camelCase name}} should have animation (default is true).
+ * @param {string} [props.className] - Additional classes to be applied to the {{camelCase name}}.
+ * @param {...object} props.props - Additional props to be spread to the underlying div element.
+ *
+ * @returns {JSX.Element} The rendered {{pascalCase name}} component.
+ */
+export const {{pascalCase name}} = memo(({
+  value, children, variant, tiny, truncate, fluid, animated = true, className = '', id, ...props
+}: {{pascalCase name}}Props) => {
+  const textFromChildren: string | undefined = `${value || children?.toString()}`
+
+  return (
+    <div
+      className={classNames(
+        classes.{{camelCase name}},
+        tiny && classes.tiny,
+        variant && classes[variant],
+        truncate && classes.truncate,
+        fluid && classes.fluid,
+        animated && classes.animated,
+        className,
+      )}
+      id={`${id || (textFromChildren && composeId(textFromChildren))}`}
+      data-testid={`${(props as Record<string, string>).dataTestId || (props as Record<string, string>)['data-testid'] || id || (textFromChildren && composeId(textFromChildren))}`}
+      {...props}
+    >
+      <span>
+        {value}
+        {children || children}
+      </span>
+    </div>
+  )
+})
+
+export type {{pascalCase name}}Type = typeof {{pascalCase name}}
+
+// Set display name for the component.
+{{pascalCase name}}.displayName = '{{pascalCase name}}'
