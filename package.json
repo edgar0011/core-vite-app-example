@@ -1,7 +1,7 @@
 {
   "name": "core-vite-app-example",
   "private": true,
-  "version": "0.1.51",
+  "version": "1.0.0",
   "scripts": {
     "prepare": "husky install",
     "dev": "vite",
@@ -30,7 +30,7 @@
     "tsc": "tsc",
     "package:update": "npm-check-updates -i",
     "generate:docs": "typedoc --options ./typedoc.js --tsconfig ./tsconfig.typedoc.json ./src",
-    "prepush": "yarn lint && yarn test && yarn tsc",
+    "prepush": "npm run lint && npm run test && npm run tsc",
     "changelog:release": "ts-node ./scripts/changelogGenerator",
     "generate:scss:types:all": "ts-node --esm ./scripts/typed-scss-modules/index.mts src",
     "generate:scss:types": "ts-node --esm ./scripts/typed-scss-modules/index.mts",
