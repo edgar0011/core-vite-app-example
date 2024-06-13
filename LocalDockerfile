@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 COPY package-lock.json ./
 
-RUN npm i -f
+RUN npm i
 # If you are building your code for production
 # RUN npm ci -f --only=production
 

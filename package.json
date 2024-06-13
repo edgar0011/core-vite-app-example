@@ -11,13 +11,13 @@
     "build:tsc": "NODE_ENV=production tsc -p tsconfig.node.json",
     "build:routes:config": "node scripts/routesConfigBuilder.js",
     "lint": "eslint src cypress .storybook scripts --ext js,jsx,ts,tsx",
-    "lint:quiet": "npm run lint -- --quiet",
-    "lint:quiet:watch": "nodemon --watch './src/**/*' --exec npm run lint:quiet",
-    "lint:fix": "npm run lint -- --fix",
+    "lint:quiet": "yarn lint -- --quiet",
+    "lint:quiet:watch": "nodemon --watch './src/**/*' --exec yarn lint:quiet",
+    "lint:fix": "yarn lint -- --fix",
     "stylelint": "npx stylelint 'src/**/*.css'",
     "test": "jest src",
-    "test:coverage": "npm run test -- --coverage",
-    "test:watch": "npm run test -- --watch",
+    "test:coverage": "yarn test -- --coverage",
+    "test:watch": "yarn test -- --watch",
     "preview": "vite preview",
     "start": "vite preview",
     "start2": "npx -y serve -p 8080 -C ./dist",
@@ -30,7 +30,7 @@
     "tsc": "tsc",
     "package:update": "npm-check-updates -i",
     "generate:docs": "typedoc --options ./typedoc.js --tsconfig ./tsconfig.typedoc.json ./src",
-    "prepush": "npm run lint && npm run test && npm run tsc",
+    "prepush": "yarn lint && yarn test && yarn tsc",
     "changelog:release": "ts-node ./scripts/changelogGenerator",
     "generate:scss:types:all": "ts-node --esm ./scripts/typed-scss-modules/index.mts src",
     "generate:scss:types": "ts-node --esm ./scripts/typed-scss-modules/index.mts",
@@ -40,6 +40,16 @@
   },
   "engines": {
     "node": ">=18 <19"
+  },
+  "overrides": {
+    "@testing-library/react-hooks": {
+      "@types/react": "$@types/react",
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "vite-plugin-replace": {
+      "vite": "$vite"
+    }
   },
   "dependencies": {
     "@e1011/core-micro-frontend": "^1.0.0",
@@ -107,5 +117,8 @@
     "vite-plugin-replace": "^0.1.1",
     "vite-tsconfig-paths": "^4.3.1",
     "whatwg-fetch": "^3.6.20"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.9.5"
   }
 }
