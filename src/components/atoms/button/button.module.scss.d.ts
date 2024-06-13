@@ -4,6 +4,7 @@ export type Styles = {
   disabled: string
   error: string
   fluid: string
+  hasShadow: string
   info: string
   'overflow-hidden': string
   success: string
@@ -11,6 +12,7 @@ export type Styles = {
   'text-nowrap': string
   'text-truncate': string
   tiny: string
+  transparent: string
   truncate: string
   warning: string
 };

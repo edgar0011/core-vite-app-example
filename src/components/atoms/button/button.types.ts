@@ -6,6 +6,7 @@ import { Alerts } from 'utils/ui/variants'
 
 export type ButtonProps = PropsWithChildren & {
   id?: string
+  type?: 'button' | 'submit' | 'reset' | undefined
   className?: string
   tiny?: boolean
   variant?: Alerts
@@ -13,6 +14,8 @@ export type ButtonProps = PropsWithChildren & {
   truncate?: boolean
   fluid?: boolean
   animated?: boolean
+  transparent?: boolean
+  hasShadow?: boolean
   preventDefualt?: boolean
   stopPropagation?: boolean
   onClick?: (event: MouseEvent | KeyboardEvent) => void

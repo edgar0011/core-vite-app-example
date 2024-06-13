@@ -33,8 +33,11 @@ const ButtonTemplate: Story<ButtonProps> = (args) => (
       </LayoutBox>
     </LayoutBox>
     <LayoutBox width='280px' height='100%' justify='center' align='center' gap='1rem'>
-      <Button variant={Alerts.error} truncate fluid {...args}>Can it handle long text?</Button>
+      <Button transparent variant={Alerts.error} truncate fluid {...args}>Can it handle long text?</Button>
       <Button variant={Alerts.error} fluid {...args}>Can it handle long text?</Button>
+    </LayoutBox>
+    <LayoutBox>
+      <Button transparent variant={Alerts.info} {...args}>Transparent</Button>
     </LayoutBox>
   </LayoutBox>
 )

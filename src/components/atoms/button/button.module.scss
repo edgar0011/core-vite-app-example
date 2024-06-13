@@ -26,18 +26,36 @@
 
   &.info {
     background-color: $info;
+    &.transparent {
+      border: 1px solid $info !important;
+    }
   }
 
   &.success {
     background-color: $success;
+    &.transparent {
+      border: 1px solid $success !important;
+    }
   }
 
   &.error {
     background-color: $error;
+    &.transparent {
+      border: 1px solid $error !important;
+    }
   }
 
   &.warning {
     background-color: $warning;
+    &.transparent {
+      border: 1px solid $warning !important;
+    }
+  }
+
+  &.transparent {
+    border: none !important;
+    background-color: transparent !important;
+    background: transparent !important;
   }
 
   &.tiny {
@@ -62,7 +80,9 @@
     transition: transform 250ms ease-out;
   }
 
-  box-shadow: $cui-card-shadow;
+  &.hasShadow {
+    box-shadow: $cui-card-shadow;
+  }
 
   &:hover {
     &.animated {

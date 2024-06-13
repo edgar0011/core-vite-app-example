@@ -33,6 +33,9 @@ export const Button = memo(({
   variant, tiny, truncate, fluid,
   preventDefualt, stopPropagation,
   onClick,
+  type = 'button',
+  transparent,
+  hasShadow,
   animated = false, className = '', id, ...props
 }: ButtonProps) => {
   const textFromChildren: string | undefined = `${label || children?.toString()}`
@@ -62,8 +65,9 @@ export const Button = memo(({
   }, [onClick, preventDefualt, stopPropagation])
 
   return (
-    <div
-      role='button'
+    <button
+      // eslint-disable-next-line react/button-has-type
+      type={type}
       tabIndex={-1}
       onClick={clickHandler}
       onKeyDown={keyDownHandler}
@@ -74,6 +78,8 @@ export const Button = memo(({
         truncate && classes.truncate,
         fluid && classes.fluid,
         animated && classes.animated,
+        transparent && classes.transparent,
+        hasShadow && classes.hasShadow,
         className,
       )}
       id={`${id || (textFromChildren && composeId(textFromChildren))}`}
@@ -84,7 +90,7 @@ export const Button = memo(({
         {label && label}
         {children || children}
       </span>
-    </div>
+    </button>
   )
 })
 

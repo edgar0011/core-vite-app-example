@@ -98,54 +98,6 @@ module.exports = function (plop) {
     ],
   })
 
-  plop.setGenerator('Component', {
-    description: 'Component controller logic',
-    prompts: [
-      {
-        type: 'input',
-        name: 'module',
-        message: 'component module, or path please',
-      },
-      {
-        type: 'input',
-        name: 'name',
-        message: 'component name please',
-      },
-    ],
-    actions: [
-      {
-        type: 'add',
-        path: 'src/components/{{module}}/{{name}}.tsx',
-        templateFile: 'scripts/plop-templates/component.hbs',
-      },
-      {
-        type: 'add',
-        path: 'src/components/{{module}}/{{camelCase name}}.module.scss',
-        templateFile: 'scripts/plop-templates/component.module.scss.hbs',
-      },
-      {
-        type: 'add',
-        path: 'src/components/{{module}}/{{camelCase name}}.stories.tsx',
-        templateFile: 'scripts/plop-templates/component.stories.hbs',
-      },
-      {
-        type: 'add',
-        path: 'src/components/{{module}}/{{camelCase name}}.test.tsx',
-        templateFile: 'scripts/plop-templates/component.test.hbs',
-      },
-      {
-        type: 'add',
-        path: 'src/components/{{module}}/{{camelCase name}}.types.ts',
-        templateFile: 'scripts/plop-templates/component.types.hbs',
-      },
-      (data) => {
-        shell.exec(`npm run generate:scss:types src/components/${data.module}`)
-
-        return 'typed css modules generated'
-      },
-    ],
-  })
-
   plop.setGenerator('Screen', {
     description: 'Screen component controller logic',
     prompts: [

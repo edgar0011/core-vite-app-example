@@ -1,4 +1,4 @@
-import { MouseEventHandler, PropsWithChildren } from 'react'
+import { MouseEvent, KeyboardEvent, PropsWithChildren } from 'react'
 import { CommonProps } from '@e1011/es-kit'
 
 
@@ -7,5 +7,5 @@ export type {{pascalCase name}}Props = PropsWithChildren & CommonProps & {
   text?: string
   className?: string
   buttonLabel?: string
-  buttonAction?: MouseEventHandler<HTMLButtonElement>
+  buttonAction?: (event?: MouseEvent | KeyboardEvent) => void
 }
