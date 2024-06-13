@@ -16,6 +16,7 @@ export type ButtonProps = PropsWithChildren & {
   animated?: boolean
   transparent?: boolean
   hasShadow?: boolean
+  hasIcon?: boolean
   preventDefualt?: boolean
   stopPropagation?: boolean
   onClick?: (event: MouseEvent | KeyboardEvent) => void

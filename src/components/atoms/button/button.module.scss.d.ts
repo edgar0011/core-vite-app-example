@@ -4,6 +4,7 @@ export type Styles = {
   disabled: string
   error: string
   fluid: string
+  hasIcon: string
   hasShadow: string
   info: string
   'overflow-hidden': string

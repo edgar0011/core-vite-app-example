@@ -84,6 +84,16 @@
     box-shadow: $cui-card-shadow;
   }
 
+  &.hasIcon {
+    padding: $cui-tiny-gap;
+    border: none !important;
+    line-height: 1px;
+
+    &.tiny {
+      padding: 0px;
+    }
+  }
+
   &:hover {
     &.animated {
       transform: scale(1.2);
