@@ -17,6 +17,7 @@ export const MainComponent = (): ReactNode => {
     <ErrorBoundary>
       <LayoutBox width='100%' align='center' direction='column' gap='1rem' padding='1rem'>
         <LayoutBox gap='1rem' padding='1rem' align='end' border='1px solid blue'>
+          <h1>CMF_APP</h1>
           <h5>{t('common:app.simple.title')}</h5>
         </LayoutBox>
       </LayoutBox>

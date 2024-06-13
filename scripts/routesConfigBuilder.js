@@ -19,7 +19,8 @@ const replacer = (source) => source
   .replace(/CMF_APP/g, pckg.name);
 
 
-(async function main(): Promise<void> {
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+(async function main() {
   let routesConfig = await fsPromises.readFile(routesConfigFileSource, 'utf8')
 
   routesConfig = replacer(routesConfig)
