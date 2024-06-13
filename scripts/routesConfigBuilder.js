@@ -12,7 +12,8 @@ const pckg = require('../package.json')
 const routesConfigFileTarget = path.resolve(__dirname, '../public/routes.config.minimal.json')
 const routesConfigFileSource = path.resolve(__dirname, './routes.config.minimal.json')
 
-const replacer = (source): string => source
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+const replacer = (source) => source
   .replace(/CMF_APP_VERSION/g, pckg.version)
   .replace(/CMF_APP_PATH/g, pckg.name.replace(/\s+/g, '-').toLowerCase())
   .replace(/CMF_APP/g, pckg.name);

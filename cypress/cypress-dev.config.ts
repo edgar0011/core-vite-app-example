@@ -18,7 +18,7 @@ export default defineConfig({
   requestTimeout: 10000,
   responseTimeout: 10000,
   taskTimeout: 360000,
-  projectId: 'vite-app-example-qa',
+  projectId: 'core-vite-app-example-qa',
   viewportHeight: 1080,
   viewportWidth: 1920,
 

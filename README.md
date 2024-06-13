@@ -1,4 +1,4 @@
-# Welcome to vite-app-example 👋
+# Welcome to core-vite-app-example 👋
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.7-blue.svg?cacheSeconds=2592000" />
 </p>
@@ -187,18 +187,18 @@ example of routes.config.json:
   "routes": {
     "basePath": "/app",
     "auth": {
-      "vite-app-example": {
-        "name": "vite-app-example",
+      "core-vite-app-example": {
+        "name": "core-vite-app-example",
         "icon": "applicationsIcon",
-        "tooltipText": "vite-app-example",
+        "tooltipText": "core-vite-app-example",
         "apps": [
           {
             "cssFiles": "[\"http://localhost:2001/bundle.css\"]",
             "jsFiles": "[\"http://localhost:2001/bundle.js\",\"http://localhost:2001/bundle.umd.js\"]",
-            "mountId": "ui-vite-app-example",
-            "config": "{\"basePath\":\"/app/vite-app-example\"}",
+            "mountId": "ui-core-vite-app-example",
+            "config": "{\"basePath\":\"/app/core-vite-app-example\"}",
             "loader": true,
-            "data-sample-attribute": "some serialized data for vite-app-example"
+            "data-sample-attribute": "some serialized data for core-vite-app-example"
           }
         ]
       }
