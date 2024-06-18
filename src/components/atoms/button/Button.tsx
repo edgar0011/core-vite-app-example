@@ -37,6 +37,7 @@ export const Button = memo(({
   transparent,
   hasShadow,
   hasIcon,
+  disabled,
   animated = false, className = '', id, ...props
 }: ButtonProps) => {
   const textFromChildren: string | undefined = `${label || children?.toString()}`
@@ -82,6 +83,7 @@ export const Button = memo(({
         transparent && classes.transparent,
         hasShadow && classes.hasShadow,
         hasIcon && classes.hasIcon,
+        disabled && classes.disabled,
         className,
       )}
       id={`${id || (textFromChildren && composeId(textFromChildren))}`}
