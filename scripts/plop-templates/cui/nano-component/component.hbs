@@ -1,32 +1,24 @@
 import { memo, FC } from 'react'
-import { Button, HeadlineTertiary, Paragraph, LayoutBox, classNames } from '@e1011/es-kit'
+import { LayoutBox, classNames } from '@e1011/es-kit'
 
 import type { {{pascalCase name}}Props } from 'components/{{module}}/{{camelCase name}}.types'
 import classes from 'components/{{module}}/{{camelCase name}}.module.scss'
 
 
 /**
- * {{pascalCase name}} component.
+ * {{pascalCase name}} nano component.
  * @component
  *
  * Generated component from Template
  * @param {object} props - The component props.
- * @param {string} [props.title] - The title for the component.
- * @param {string} [props.text] - The text content for the component.
- * @param {string} [props.buttonLabel] - The label for the button in the component.
  * @param {string} [props.className] - Additional CSS class name(s) for styling the component.
- * @param {() => void} [props.buttonAction] - The action to be performed when the button is clicked.
  * @param {React.ReactNode} [props.children] - The children components or elements.
  *
  * @type {React.FC<{{pascalCase name}}Props>}
  * @returns {React.ReactElement} The {{pascalCase name}}.
  */
 export const {{pascalCase name}}: FC<{{pascalCase name}}Props> = memo<{{pascalCase name}}Props>(({
-  title = '{{pascalCase name}} - generated',
-  text = 'One time, there will be a component',
-  buttonLabel = '{{pascalCase name}} Click',
   className = '',
-  buttonAction = (): void => alert('{{pascalCase name}} - generated, button clicked'),
   children,
   ...props
 }: {{pascalCase name}}Props) => (
@@ -39,9 +31,6 @@ export const {{pascalCase name}}: FC<{{pascalCase name}}Props> = memo<{{pascalCa
     className={classNames(classes['{{camelCase name}}'], className)}
     {...props}
   >
-    {title && <HeadlineTertiary>{title}</HeadlineTertiary>}
-    {text && <Paragraph>{text}</Paragraph>}
-    {buttonLabel && <Button onClick={buttonAction}>{buttonLabel}</Button>}
     {children && children}
   </LayoutBox>
 ))

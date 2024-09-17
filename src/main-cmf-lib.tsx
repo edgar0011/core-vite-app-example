@@ -59,6 +59,6 @@ if (rootElm) {
   )
 } else {
   customElements.define('ui-app-xx', UiApp)
-  // throw new Error('Missing VC Module element with mountPointId for ui-comments-example')
-  console.error('Missing VC Module element with mountPointId for ui-comments-example')
+  // throw new Error('Missing CMF Module element with mountPointId')
+  console.error('Missing CMF Module element with mountPointId')
 }

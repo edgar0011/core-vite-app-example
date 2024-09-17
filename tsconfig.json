@@ -49,6 +49,8 @@
       "test": ["/test/*"],
       "router": ["/router/*"],
       "utils": ["/utils/*"],
+      "style": ["/style/*"],
+      "screens": ["/screens/*"]
     },
   },
   "exclude": [

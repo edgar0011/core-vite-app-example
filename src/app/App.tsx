@@ -5,6 +5,8 @@ import '@e1011/es-kit/dist/ui/index.css'
 
 import classes from './app.module.scss'
 
+import { ScScreen } from 'screens/sc/Sc.screen'
+
 
 export const App = (): ReactNode => {
   useThemePreference()
@@ -34,6 +36,7 @@ export const MainComponent = (): ReactNode => {
           <h1>CMF_APP</h1>
           <h5>{t('common:app.title')}</h5>
         </LayoutBox>
+        <ScScreen title='ScScreen' />
       </LayoutBox>
     </ErrorBoundary>
   )

@@ -1,0 +1,32 @@
+@import 'src/styles/common.scss';
+
+.sc {
+  padding: 2rem;
+  border: 1px solid $blue-light;
+  background-color: $gray-light;
+  overflow: auto;
+}
+
+:global {
+  // Apply dark theme
+  .cui-theme-dark {
+    :local {
+      .sc {
+        border: 1px solid $blue-light;
+        background-color: $gray-light;
+        color: $white;
+      }
+    }
+  }
+
+  // Apply light theme
+  .cui-theme-light {
+    :local {
+      .sc {
+        border: 1px solid $blue-light;
+        background-color: $gray-light;
+        color: $black;
+      }
+    }
+  }
+}

@@ -1,7 +1,6 @@
 export type Styles = {
-  anchorLink: string
-  disabled: string
   'overflow-hidden': string
+  sc: string
   'text-ellipsis': string
   'text-nowrap': string
   'text-truncate': string

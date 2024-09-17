@@ -25,7 +25,7 @@ console.log('lastCommit', lastCommit)
 
 const forceGeneratingSourceMaps = process.argv.includes('source-maps')
 
-const versionToken = `[${version}, "${lastCommit}"]`
+const versionToken = `${version}, ${lastCommit?.trim()}`
 
 const nonChunks = ['react', 'react-dom',
   'reselect', 'react-router-dom', 'dayjs',
